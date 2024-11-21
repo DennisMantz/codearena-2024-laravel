@@ -390,7 +390,22 @@ class BlogTest extends TestCase
      * TOD:Ensure that blog posts page has pagination.
      */
     public function testBlogPostsPageHasPagination()
-    {
-        $this->markTestIncomplete();
-    }
+{
+    // Create a user
+    $user = User::factory()->create();
+
+    // Create enough posts to require pagination (e.g., assuming 10 per page)
+    Post::factory()->count(15)->create([
+        'user_id' => $user->id,
+        'published_at' => now(),
+    ]);
+
+    // Make a GET request to the posts page
+    $response = $this->get(route('posts'));
+
+    // Assert that the response status is 200
+    $response->assertStatus(200);
+
+
+}
 }

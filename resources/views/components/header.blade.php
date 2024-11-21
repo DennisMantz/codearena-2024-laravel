@@ -3,6 +3,8 @@
       <div class="flex flex-1">
         <div class="flex lg:gap-x-12">
           <a href="{{ route('posts') }}" class="text-sm/6 font-semibold text-gray-900">Posts</a>
+          <a href="{{ route('promoted') }}" class="text-sm/6 font-semibold text-gray-900">Promoted</a>
+        
         </div>
       </div>
       <a href="/" class="-m-1.5 p-1.5">
